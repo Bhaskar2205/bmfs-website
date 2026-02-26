@@ -30,7 +30,7 @@ export default function Navbar() {
   {/* Logo */}
   <div className="relative w-12 h-12 shrink-0">
     <Image
-      src="/logo.png"
+      src="/logo-new.png"
       alt="BharatMoney Financial Services"
       fill
       priority
