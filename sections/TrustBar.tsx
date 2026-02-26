@@ -1,0 +1,20 @@
+export default function TrustBar() {
+    const items = [
+      "Trusted Since 1987",
+      "Motilal Oswal Partner",
+      "Expert Guidance",
+      "Wealth Planning",
+    ];
+  
+    return (
+      <div className="bg-blue-900 text-white py-6">
+        <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-8 text-sm">
+          {items.map((item, i) => (
+            <span key={i} className="opacity-90">
+              ✓ {item}
+            </span>
+          ))}
+        </div>
+      </div>
+    );
+  }
