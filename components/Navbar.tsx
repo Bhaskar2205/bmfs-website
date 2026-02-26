@@ -26,14 +26,19 @@ export default function Navbar() {
       >
       {/* LOGO + BRAND NAME */}
 <a href="/" className="flex items-center gap-3 group">
-<div className="relative h-12 w-12">
-<img
-  src="/logo.png"
-  alt="logo"
-  className="h-12 w-auto object-contain"
-/>
-</div>
+  
+  {/* Logo */}
+  <div className="relative w-12 h-12 shrink-0">
+    <Image
+      src="/logo.png"
+      alt="BharatMoney Financial Services"
+      fill
+      priority
+      className="object-contain"
+    />
+  </div>
 
+  {/* Brand Text */}
   <div className="hidden sm:flex flex-col leading-tight">
     <span className="text-blue-950 font-semibold tracking-wide text-sm">
       BHARATMONEY
@@ -42,6 +47,7 @@ export default function Navbar() {
       FINANCIAL SERVICES
     </span>
   </div>
+
 </a>
 
         {/* MENU */}
