@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -23,21 +24,24 @@ export default function Navbar() {
             : "bg-white/60 backdrop-blur-md"
         }`}
       >
-       {/* LOGO + BRAND NAME */}
-<a href="#" className="flex items-center gap-3">
-  <img
-    src="/logo.png"
-    alt="BharatMoney Logo"
-    className="h-12 w-auto object-contain"
-  />
+      {/* LOGO + BRAND NAME */}
+<a href="/" className="flex items-center gap-3 group">
+<div className="relative h-12 w-12">
+<img
+  src="/logo.png"
+  alt="logo"
+  className="h-12 w-auto object-contain"
+/>
+</div>
 
-  <span className="hidden sm:block text-blue-950 font-semibold tracking-wide text-sm leading-tight">
-    BHARATMONEY
-    <br />
-    <span className="text-[10px] tracking-widest text-slate-500">
+  <div className="hidden sm:flex flex-col leading-tight">
+    <span className="text-blue-950 font-semibold tracking-wide text-sm">
+      BHARATMONEY
+    </span>
+    <span className="text-[10px] tracking-[0.25em] text-slate-500">
       FINANCIAL SERVICES
     </span>
-  </span>
+  </div>
 </a>
 
         {/* MENU */}
@@ -56,16 +60,14 @@ export default function Navbar() {
         </div>
 
         {/* CTA BUTTON */}
-        <button
-          onClick={() =>
-            document.getElementById("contact")?.scrollIntoView({
-              behavior: "smooth",
-            })
-          }
-          className="bg-gradient-to-r from-blue-900 to-blue-700 text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md hover:scale-105 hover:shadow-lg transition"
-        >
-          Open Account
-        </button>
+<a
+  href="https://ekyc.motilaloswal.com/partner?diyid=dceba2f4-a859-4e68-936c-7038669a7dd0"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-gradient-to-r from-blue-900 to-blue-700 text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md hover:scale-105 hover:shadow-lg transition inline-block"
+>
+  Open Demat Account
+</a>
       </div>
     </div>
   );
