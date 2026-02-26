@@ -26,14 +26,14 @@ export default function Demat() {
       <div className="absolute inset-0 bg-gradient-to-b from-slate-950 to-black"></div>
 
       {/* GLOW (smaller on mobile) */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[350px] md:w-[700px] h-[300px] md:h-[500px] bg-blue-500/20 blur-[90px] md:blur-[120px] rounded-full"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[350px] md:w-[700px] h-[300px] md:h-[500px] bg-blue-500/20 blur-[90px] md:blur-3xl md:blur-3xl md:blur-[120px] rounded-full"></div>
 
       <div className="relative max-w-6xl mx-auto px-5 text-center text-white">
 
         {/* TITLE */}
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           className="text-2xl md:text-5xl font-bold mb-4 leading-snug"
         >
           Open Your Free Demat Account
@@ -51,7 +51,7 @@ export default function Demat() {
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.08 }}
               className="bg-white/5 border border-white/10 backdrop-blur-md p-5 md:p-6 rounded-xl text-left hover:bg-white/10 transition"
             >
@@ -85,7 +85,7 @@ export default function Demat() {
           target="_blank"
           rel="noopener noreferrer"
           initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          animate={{ opacity: 1, scale: 1 }}
           className="inline-block w-full sm:w-auto bg-gradient-to-r from-blue-600 to-blue-500 px-8 md:px-12 py-3 md:py-4 rounded-full text-base md:text-lg font-semibold shadow-xl hover:scale-105 active:scale-95 hover:shadow-blue-500/40 transition"
         >
           Open Free Account Now →

@@ -10,11 +10,10 @@ export default function Hero() {
   const whatsappLink = "https://wa.link/fcw2ig";
 
   return (
-    <section className="relative overflow-hidden pt-32 pb-28 text-center">
-
+<section className="relative overflow-hidden pt-32 pb-28 text-center bg-white">
       {/* BACKGROUND */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-blue-100"></div>
-      <div className="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-blue-400/20 blur-[140px] rounded-full"></div>
+      <div className="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-blue-400/20 blur-3xl md:blur-[120px] rounded-full"></div>
 
       <div className="relative max-w-4xl mx-auto px-6">
 

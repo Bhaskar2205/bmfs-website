@@ -20,7 +20,7 @@ export default function Course() {
         {/* TITLE */}
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           className="text-2xl md:text-4xl font-bold mb-4 leading-snug"
         >
           Stock Market Ki Pathshala

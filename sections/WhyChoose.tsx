@@ -30,7 +30,7 @@ export default function WhyChoose() {
         {/* TITLE */}
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           className="text-2xl md:text-4xl font-bold mb-4"
         >
           Why Choose BharatMoney?
@@ -49,7 +49,7 @@ export default function WhyChoose() {
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }}
                 className="group bg-white/10 border border-white/10 backdrop-blur-md
                            p-4 md:p-6 rounded-xl flex items-start gap-3 md:gap-4

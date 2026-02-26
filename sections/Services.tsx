@@ -34,7 +34,7 @@ export default function Services() {
         {/* TITLE */}
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           className="text-2xl md:text-4xl font-bold text-center text-blue-950 mb-4"
         >
           Financial Services
@@ -54,7 +54,7 @@ export default function Services() {
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.04 }}
                 className="group bg-white/80 backdrop-blur-lg border border-slate-200 p-5 md:p-8 rounded-2xl shadow-sm hover:shadow-2xl hover:-translate-y-2 active:scale-[0.98] transition duration-300 text-center"
               >

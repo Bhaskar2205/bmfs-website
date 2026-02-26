@@ -12,12 +12,11 @@ export default function Founder() {
         {/* IMAGE */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          animate={{ opacity: 1, y: 0 }}          transition={{ duration: 0.6 }}
           className="relative group w-full max-w-sm mx-auto"
         >
           {/* Glow */}
-          <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 blur-2xl rounded-3xl group-hover:blur-3xl transition"></div>
+          <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 blur-xl md:blur-2xl rounded-3xl group-hover:blur-3xl transition"></div>
 
           <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-white/5 backdrop-blur-xl">
 
