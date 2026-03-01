@@ -11,7 +11,7 @@ export default function Team() {
       image: "/team/bhaskar.jpeg",
     },
     {
-      name: "Rahul Subani",
+      name: "Rahul Subnani",
       role: "Referral Associate",
       image: "/team/rahul.jpeg",
     },
