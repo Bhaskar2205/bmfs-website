@@ -91,10 +91,50 @@ export default function Demat() {
           Open Free Account Now →
         </motion.a>
 
-        {/* NOTE */}
-        <p className="text-[11px] md:text-xs text-slate-500 mt-4">
-          Takes less than 10 minutes • Zero paperwork
-        </p>
+       {/* AI FEATURE ANNOUNCEMENT */}
+<motion.div
+initial={{ opacity: 0, y: 20 }}
+animate={{ opacity: 1, y: 0 }}
+transition={{ delay: 0.3 }}
+className="relative mt-8 flex justify-center px-4"
+>
+  
+  {/* AI Glow Background */}
+  <div className="absolute inset-0 flex justify-center">
+    <div className="w-[220px] md:w-[420px] h-[120px] bg-blue-500/20 blur-3xl rounded-full animate-pulse"></div>
+  </div>
+
+  {/* Card */}
+  <div className="relative bg-gradient-to-r from-blue-900/40 to-blue-800/30 border border-blue-500/30 backdrop-blur-md px-5 md:px-7 py-4 rounded-xl max-w-xl w-full text-center overflow-hidden">
+
+    {/* Animated Scan Line */}
+    <motion.div
+      animate={{ y: ["-120%", "120%"] }}
+      transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
+      className="absolute left-0 right-0 h-[2px] bg-blue-400/40 blur-sm"
+    />
+
+    {/* AI Badge */}
+    <div className="flex justify-center mb-2">
+      <span className="text-[10px] md:text-xs px-3 py-1 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 animate-pulse">
+        AI POWERED
+      </span>
+    </div>
+
+    {/* Headline */}
+    <p className="text-sm md:text-base font-semibold text-blue-300">
+      🚀 BharatMoney AI Document Upload Launching Soon
+    </p>
+
+    {/* Description */}
+    <p className="text-xs md:text-sm text-slate-300 mt-1 leading-relaxed">
+      Just upload your documents and our
+      <span className="text-white font-medium"> AI automated verification </span>
+      will process them instantly and open your account in seconds.
+    </p>
+
+  </div>
+</motion.div>
       </div>
     </section>
   );
