@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Founder() {
   return (
-    <section className="py-20 md:py-24 bg-gradient-to-b from-slate-950 to-slate-900 text-white">
+    <section className="py-20 md:py-24 bg-linear-to-b from-slate-950 to-slate-900 text-white">
       
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
 
@@ -16,12 +16,12 @@ export default function Founder() {
           className="relative group w-full max-w-sm mx-auto"
         >
           {/* Glow */}
-          <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 blur-xl md:blur-2xl rounded-3xl group-hover:blur-3xl transition"></div>
+          <div className="absolute -inset-1 bg-linear-to-r from-blue-500/20 to-indigo-500/20 blur-xl md:blur-2xl rounded-3xl group-hover:blur-3xl transition"></div>
 
           <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-white/5 backdrop-blur-xl">
 
             {/* Image */}
-            <div className="relative h-[420px] w-full overflow-hidden">
+            <div className="relative h-105 w-full overflow-hidden">
               <Image
                 src="/founder.png"
                 alt="Kishan Jainani"
@@ -32,7 +32,7 @@ export default function Founder() {
             </div>
 
             {/* Overlay */}
-            <div className="absolute bottom-0 w-full bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 text-center md:text-left">
+            <div className="absolute bottom-0 w-full bg-linear-to-t from-black/80 via-black/40 to-transparent p-6 text-center md:text-left">
               <h3 className="text-white text-lg font-semibold tracking-wide">
                 Mr. Kishan Jainani
               </h3>

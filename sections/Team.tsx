@@ -15,16 +15,7 @@ export default function Team() {
       role: "Referral Associate",
       image: "/team/rahul.jpeg",
     },
-    {
-      name: "Wasim Khan",
-      role: "Wealth Manager",
-      image: "/team/wasim.jpeg",
-    },
-    {
-      name: "Guddu Saini",
-      role: "Business development Manager",
-      image: "/team/guddu.jpeg",
-    },
+    
     {
       name: "Chirag Sharma ",
       role: "Referral Associate ",
