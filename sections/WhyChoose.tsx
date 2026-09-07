@@ -1,74 +1,93 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShieldCheck, TrendingUp, Cpu, MapPin, Gem } from "lucide-react";
+import {
+  Building,
+  Cpu,
+  Gem,
+  HeartHandshake,
+  Microscope,
+  ShieldCheck,
+} from "lucide-react";
+import { SectionHeading, Stagger, staggerItem } from "@/components/motion/Reveal";
 
 const points = [
-  { text: "Research Driven Approach", icon: TrendingUp },
-  { text: "Full Spectrum Financial Solutions", icon: Gem },
-  { text: "Personal Guidance + Technology", icon: Cpu },
-  { text: "Local Trust with National Strength", icon: MapPin },
-  { text: "Long-Term Wealth Philosophy", icon: ShieldCheck },
+  {
+    icon: Microscope,
+    title: "Research-driven approach",
+    desc: "Every recommendation is backed by Motilal Oswal's institutional research desk.",
+    span: "md:col-span-2",
+  },
+  {
+    icon: Gem,
+    title: "Full-spectrum solutions",
+    desc: "Equity, mutual funds, insurance, IPOs and retirement — under one roof.",
+  },
+  {
+    icon: Cpu,
+    title: "Guidance + technology",
+    desc: "Personal advisors paired with modern, paperless investing tools.",
+  },
+  {
+    icon: Building,
+    title: "Local trust, national strength",
+    desc: "A Jaipur team with the backing of a nationwide financial institution.",
+    span: "md:col-span-2",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Long-term wealth philosophy",
+    desc: "We optimise for compounding and discipline, not hype.",
+  },
+  {
+    icon: HeartHandshake,
+    title: "Transparent, always",
+    desc: "Clear costs, honest advice and communication you can rely on.",
+  },
 ];
 
 export default function WhyChoose() {
   return (
-    <section className="relative py-16 md:py-24 overflow-hidden">
+    <section id="why" className="relative overflow-hidden py-20 md:py-28">
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-blue-900 to-navy-950" />
+      <div className="absolute left-1/2 top-0 -z-10 h-[26rem] w-[42rem] -translate-x-1/2 rounded-full bg-blue-400/20 blur-[130px]" />
+      <div className="absolute inset-0 -z-10 bg-grid-dark opacity-30" />
 
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-900 to-blue-950"></div>
+      <div className="relative mx-auto max-w-6xl px-5 text-white">
+        <SectionHeading
+          dark
+          eyebrow="Why BharatMoney"
+          title={
+            <>
+              Trusted expertise that <span className="text-gradient-gold">compounds</span>
+            </>
+          }
+          subtitle="Research-backed strategies and personalised solutions designed to secure your financial future."
+        />
 
-      {/* Glow (lighter on mobile for performance) */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2
-                      w-[350px] md:w-[700px]
-                      h-[300px] md:h-[500px]
-                      bg-blue-400/20 blur-[80px] md:blur-[120px]
-                      rounded-full"></div>
-
-      <div className="relative max-w-6xl mx-auto px-5 text-center text-white">
-
-        {/* TITLE */}
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-2xl md:text-4xl font-bold mb-4"
-        >
-          Why Choose BharatMoney?
-        </motion.h2>
-
-        <p className="text-blue-100 text-sm md:text-base mb-10 md:mb-14 max-w-2xl mx-auto leading-relaxed">
-          Trusted expertise, research-backed strategies, and personalized
-          financial solutions designed to secure your future.
-        </p>
-
-        {/* GRID */}
-        <div className="grid gap-4 md:grid-cols-2 md:gap-6">
-          {points.map((point, i) => {
-            const Icon = point.icon;
-            return (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.05 }}
-                className="group bg-white/10 border border-white/10 backdrop-blur-md
-                           p-4 md:p-6 rounded-xl flex items-start gap-3 md:gap-4
-                           hover:bg-white/20 active:scale-[0.98]
-                           transition duration-300"
-              >
-                <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg
-                                bg-blue-500/20 flex items-center justify-center
-                                shrink-0">
-                  <Icon size={18} />
-                </div>
-
-                <p className="text-blue-50 text-left text-sm md:text-base leading-snug">
-                  {point.text}
-                </p>
-              </motion.div>
-            );
-          })}
-        </div>
+        <Stagger className="mt-14 grid gap-4 md:grid-cols-3 md:gap-5">
+          {points.map((point, i) => (
+            <motion.div
+              key={point.title}
+              variants={staggerItem}
+              whileHover={{ y: -5 }}
+              className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] p-6 backdrop-blur-md transition hover:border-white/25 hover:bg-white/[0.1] ${
+                point.span ?? ""
+              }`}
+            >
+              <span className="pointer-events-none absolute -right-6 -top-8 font-display text-7xl font-bold text-white/[0.05]">
+                0{i + 1}
+              </span>
+              <div className="mb-4 grid h-11 w-11 place-items-center rounded-xl bg-blue-500/15 text-blue-200 ring-1 ring-white/10 transition group-hover:scale-110">
+                <point.icon size={19} />
+              </div>
+              <h3 className="font-display text-base font-semibold">{point.title}</h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-blue-100/75">
+                {point.desc}
+              </p>
+            </motion.div>
+          ))}
+        </Stagger>
       </div>
     </section>
   );

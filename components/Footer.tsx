@@ -1,119 +1,161 @@
 "use client";
 
-import { Phone, Mail, MapPin, Instagram, Youtube } from "lucide-react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import {
+  ArrowUpRight,
+  Instagram,
+  Mail,
+  MapPin,
+  Phone,
+  Youtube,
+} from "lucide-react";
+
+const OPEN_ACCOUNT =
+  "https://ekyc.motilaloswal.com/partner?diyid=dceba2f4-a859-4e68-936c-7038669a7dd0";
+
+const nav = [
+  { label: "Founder", href: "#founder" },
+  { label: "Services", href: "#services" },
+  { label: "Course", href: "#course" },
+  { label: "Why Us", href: "#why" },
+  { label: "Team", href: "#team" },
+  { label: "Contact", href: "#contact" },
+];
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-slate-950 to-black text-white pt-16 md:pt-20 pb-10">
+    <footer className="relative overflow-hidden bg-black pt-16 text-white md:pt-20">
+      <div className="absolute inset-0 bg-dots-dark opacity-20" />
 
-      <div className="max-w-6xl mx-auto px-5 grid gap-10 md:grid-cols-3">
-
-        {/* BRAND */}
-        <div>
-          <h2 className="text-2xl font-bold text-blue-400 mb-4">
-            BharatMoney
-          </h2>
-
-          <p className="text-slate-400 leading-relaxed text-sm md:text-base">
-            Helping individuals build long-term wealth through smart
-            investing, financial planning, and trusted market guidance.
-          </p>
-
-          {/* SOCIAL */}
-          <div className="flex gap-4 mt-6 text-slate-400">
-            <a href="https://www.instagram.com/bharatmoneyfinancialservices/?hl=en" className="hover:text-white transition">
-              <Instagram size={20} />
-            </a>
-            <a href="https://www.youtube.com/@bharatmoney-x8x" className="hover:text-white transition">
-              <Youtube size={20} />
-            </a>
+      <div className="relative mx-auto max-w-6xl px-5">
+        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1.2fr]">
+          {/* Brand */}
+          <div>
+            <div className="flex items-center gap-2.5">
+              <span className="relative h-10 w-10">
+                <Image src="/logo-new.png" alt="BharatMoney" fill sizes="40px" className="object-contain" />
+              </span>
+              <span className="flex flex-col leading-tight">
+                <span className="font-display text-sm font-bold tracking-wide">
+                  BHARATMONEY
+                </span>
+                <span className="text-[9px] tracking-[0.3em] text-slate-500">
+                  FINANCIAL SERVICES
+                </span>
+              </span>
+            </div>
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-slate-400">
+              Helping individuals build long-term wealth through smart investing,
+              financial planning and trusted market guidance since 1987.
+            </p>
+            <div className="mt-6 flex gap-3">
+              {[
+                { icon: Instagram, href: "https://www.instagram.com/bharatmoneyfinancialservices/?hl=en" },
+                { icon: Youtube, href: "https://www.youtube.com/@bharatmoney-x8x" },
+              ].map((s, i) => (
+                <motion.a
+                  key={i}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ y: -3 }}
+                  className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 text-slate-300 transition hover:border-white/25 hover:text-white"
+                >
+                  <s.icon size={18} />
+                </motion.a>
+              ))}
+            </div>
           </div>
-        </div>
 
-        {/* CONTACT INFO */}
-        <div>
-          <h3 className="font-semibold mb-4 text-lg">Contact Us</h3>
+          {/* Nav */}
+          <div>
+            <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-slate-300">
+              Explore
+            </h3>
+            <ul className="mt-4 space-y-2.5">
+              {nav.map((n) => (
+                <li key={n.href}>
+                  <a
+                    href={n.href}
+                    className="text-sm text-slate-400 transition hover:text-white"
+                  >
+                    {n.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-          <div className="space-y-3 text-slate-400 text-sm md:text-base">
-
+          {/* Contact + CTA */}
+          <div>
+            <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-slate-300">
+              Contact
+            </h3>
+            <div className="mt-4 space-y-3 text-sm text-slate-400">
+              <a href="tel:+918875729292" className="flex items-center gap-3 transition hover:text-white">
+                <Phone size={16} /> +91 88757 29292
+              </a>
+              <a
+                href="mailto:bharatmoneymofsl@gmail.com"
+                className="flex items-center gap-3 break-all transition hover:text-white"
+              >
+                <Mail size={16} /> bharatmoneymofsl@gmail.com
+              </a>
+              <a
+                href="https://maps.google.com/?q=Patel+Marg+Mansarovar+Jaipur"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 transition hover:text-white"
+              >
+                <MapPin size={16} /> Patel Marg, Mansarovar, Jaipur
+              </a>
+            </div>
             <a
-              href="tel:+918875729292"
-              className="flex items-center gap-3 hover:text-white transition"
-            >
-              <Phone size={18} /> +91 88757 29292
-            </a>
-
-            <a
-              href="mailto:bharatmoneymofsl@gmail.com"
-              className="flex items-center gap-3 hover:text-white transition break-all"
-            >
-              <Mail size={18} /> bharatmoneymofsl@gmail.com
-            </a>
-
-            <a
-              href="https://maps.google.com/?q=Mansarovar+Jaipur"
+              href={OPEN_ACCOUNT}
               target="_blank"
-              className="flex items-center gap-3 hover:text-white transition"
+              rel="noopener noreferrer"
+              className="group mt-5 inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-blue-600 to-sky-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/25 transition hover:shadow-xl"
             >
-              <MapPin size={18} />Patel Marg, Mansarovar, Jaipur
+              Open Free Account
+              <ArrowUpRight size={15} className="transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
-
           </div>
         </div>
 
-        {/* CTA */}
-        <div>
-          <h3 className="font-semibold mb-4 text-lg">
-            Start Your Investment Journey
-          </h3>
-
-          <p className="text-slate-400 mb-6 text-sm md:text-base">
-            Open your Demat account today and begin building wealth.
-          </p>
-
-          <a
-            href="https://ekyc.motilaloswal.com/partner?diyid=dceba2f4-a859-4e68-936c-7038669a7dd0"
+        {/* Developer credit — Pink City Blog */}
+        <div className="mt-14 border-t border-white/10 pt-10">
+          <motion.a
+            href="https://pink-city-blog.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-gradient-to-r from-blue-600 to-blue-500 px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 active:scale-95 hover:shadow-blue-500/40 transition"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -4 }}
+            className="group relative mx-auto block max-w-xl overflow-hidden rounded-2xl border border-pink-400/30 bg-gradient-to-br from-pink-500/15 via-rose-500/10 to-fuchsia-500/15 p-6 text-center shadow-[0_20px_60px_-20px_rgba(244,63,94,0.5)] transition"
           >
-            Open Free Account
-          </a>
+            <div className="pointer-events-none absolute -inset-x-10 -top-16 h-32 bg-pink-500/25 blur-3xl transition group-hover:bg-pink-500/40" />
+            <p className="relative text-[11px] font-semibold uppercase tracking-[0.28em] text-pink-200/80">
+              Designed, developed &amp; maintained by
+            </p>
+            <p className="relative mt-2 bg-gradient-to-r from-pink-300 via-rose-300 to-fuchsia-300 bg-clip-text font-display text-2xl font-extrabold text-transparent sm:text-3xl">
+              Pink City Blog
+            </p>
+            <span className="relative mt-3 inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 px-4 py-1.5 text-xs font-semibold text-white shadow-lg shadow-pink-500/30 transition group-hover:shadow-pink-500/50">
+              Visit our work
+              <ArrowUpRight size={14} className="transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </span>
+          </motion.a>
+
+          <div className="mt-8 flex flex-col items-center gap-2 pb-7 text-center text-xs text-slate-500">
+            <p>
+              © {new Date().getFullYear()} Bharat Money Financial Services. All rights reserved.
+            </p>
+            <p className="text-[11px] text-slate-600">Built with Next.js</p>
+          </div>
         </div>
       </div>
-
-     {/* DIVIDER + COPYRIGHT */}
-<div className="border-t border-white/10 mt-12 md:mt-16 pt-6 text-center text-slate-500 text-xs md:text-sm space-y-3">
-
-<p>
-  © {new Date().getFullYear()} Bharat Money Financial Services. All rights reserved.
-</p>
-
-{/* CREDIT LINE */}
-<p className="text-slate-400">
-  Website crafted & maintained by
-</p>
-
-<a
-  href="https://pink-city-blog.vercel.app/"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-block px-4 py-1.5 rounded-full
-             bg-gradient-to-r from-pink-500 to-rose-500
-             text-white text-sm font-semibold
-             shadow-lg shadow-pink-500/30
-             hover:scale-105 hover:shadow-pink-500/50
-             transition"
->
-  Pink City Blog
-</a>
-
-<p className="text-slate-500 text-[11px]">
-  Built with Next.js
-</p>
-
-</div>
-
     </footer>
   );
 }
