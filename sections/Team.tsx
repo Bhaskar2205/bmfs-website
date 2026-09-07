@@ -7,13 +7,13 @@ export default function Team() {
     },
     {
       name: "Bhaskar Mamoria",
-      role: "Technical Consultant",
+      role: "Investor",
       image: "/team/bhaskar.jpeg",
     },
     {
-      name: "Rahul Subnani",
-      role: "Referral Associate",
-      image: "/team/rahul.jpeg",
+      name: "Naveen Verma",
+      role: "Investment Consultant",
+      image: "/team/naveen.jpeg",
     },
     
     {
